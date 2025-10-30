@@ -37,7 +37,9 @@ class Dog(Animal):
 
 
 def feed_animals(list_of_animals: list[Animal]) -> int:
-    total_food_points = 0
-    for animal in list_of_animals:
-        total_food_points += animal.feed()
-    return total_food_points
+    """
+    Using generator for better optimisation
+    :param list_of_animals:
+    :return:
+    """
+    return sum(animal.feed() for animal in list_of_animals)
